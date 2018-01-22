@@ -7,9 +7,9 @@ object ApplicationBuild extends Build {
   lazy val commonSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.chrisstucchio",
     credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
-    scalaVersion := "2.12.2",
-    crossScalaVersions := Seq("2.11.6", "2.12.0"),
-    version := "0.19.4",
+    scalaVersion := "2.12.4",
+    crossScalaVersions := Seq("2.11.6", "2.12.0", "2.12.2", "2.12.4"),
+    version := "0.19.5",
     resolvers ++= myResolvers,
     name := "tiramisu",
     //fork := true,
