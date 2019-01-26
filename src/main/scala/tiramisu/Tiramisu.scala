@@ -67,10 +67,16 @@ trait Query {
     ps.executeQuery()
   }
 
+  def executeQueryPair(implicit conn: Connection): (PreparedStatement, ResultSet) = {
+    val ps = prepareStatement(conn)
+    (ps, ps.executeQuery())
+  }
+
   def execute(implicit conn: Connection): Boolean = {
     val ps = prepareStatement(conn)
     ps.execute()
   }
+
 }
 
 trait IsQueryHasQuery extends Query {
